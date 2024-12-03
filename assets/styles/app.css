@@ -17,7 +17,7 @@ html, body{
 }
 
 .games_container img {
-    width: 128px;
+    max-width: 256px;
     height: 128px;
 }
 
@@ -41,4 +41,10 @@ h1 {
 .game.darken {
     background-color: #132f5b; /* Couleur de fond noir */
     color: white; /* Texte en blanc pour contraste */
+}
+
+#selected-games ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: dodgerblue;
 }
