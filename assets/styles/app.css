@@ -1,0 +1,44 @@
+html, body{
+    display: flex;
+    height:100%;
+    width: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+    border: black 1px solid;
+}
+.main_container {
+    border: green 1px solid;
+}
+.games_container {
+    display: grid;
+    border: black solid 1px;
+    justify-items: stretch;
+    grid-gap: 2em;
+}
+
+.games_container img {
+    width: 128px;
+    height: 128px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.game {
+    display: flex;
+    background-color: dodgerblue;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: repeat(5, 100px)
+}
+
+.checkbox {
+    display: none;
+}
+
+
+.game.darken {
+    background-color: #132f5b; /* Couleur de fond noir */
+    color: white; /* Texte en blanc pour contraste */
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GauntletParameterController!{% endblock %}
+
+{% block body %}
+<h1>Paramétrez votre Gauntlet</h1>
+    <form action="{{ path('app_gauntlet_creator') }}" method="get">
+        <label>
+            Selectionnez le nombre de jeux
+            <input type="number" name="nb_games">
+        </label>
+        <button type="submit">Valider</button>
+
+    </form>
+{% endblock %}
