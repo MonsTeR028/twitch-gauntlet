@@ -4,21 +4,7 @@
 
 {% block body %}
 <h1>Paramétrez votre Gauntlet</h1>
-    <form action="{{ path('app_gauntlet_creator') }}" method="get">
-        <label>
-            Selectionnez le nombre de jeux (max 10)
-            <input type="number" name="nbGames" max="10" min="1">
-        </label>
-        <label>
-            Choissisez la disposition du gauntlet
-            <select name="disposition">
-                <option value="top">Haut</option>
-                <option value="bottom">Bas</option>
-                <option value="left">Gauche</option>
-                <option value="right">Droite</option>
-            </select>
-        </label>
-        <button type="submit">Valider</button>
-
-    </form>
+    {{ form_start(formulaire) }}
+    {{ form_widget(formulaire) }}
+    {{ form_end(formulaire) }}
 {% endblock %}
