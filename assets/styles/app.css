@@ -1,23 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+}
+
 html, body{
+    background: #003153;
     display: flex;
     height:100%;
     width: 100%;
     flex-direction: column;
     margin: 0 auto;
-    border: black 1px solid;
+    font-family: "Poppins", serif;
+    font-weight: 500;
 }
 .main_container {
-    border: green 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    margin: 5px;
 }
 .games_container {
     display: grid;
-    border: black solid 1px;
-    justify-items: stretch;
     grid-gap: 2em;
+    max-height: 740px;
+    max-width: 1200px;
+    overflow-y: scroll;
+    grid-template-columns: auto auto auto;
+    padding: 2em;
+}
+
+.main_container_without_submit {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .games_container img {
-    max-width: 256px;
+    max-width: 200px;
     height: 128px;
 }
 
@@ -30,21 +52,78 @@ h1 {
     background-color: dodgerblue;
     flex-direction: column;
     align-items: center;
-    grid-template-columns: repeat(5, 100px)
+    width: 220px;
+    height: 220px;
+    gap: 10px;
+    justify-content: center;
+    border: #2f66ff 4px solid;
+    border-radius: 20px;
 }
 
 .checkbox {
     display: none;
 }
 
-
 .game.darken {
-    background-color: #132f5b; /* Couleur de fond noir */
-    color: white; /* Texte en blanc pour contraste */
+    background-color: #1b54a4;
+    color: white;
 }
 
 #selected-games ul {
     list-style-type: none;
     padding: 0;
     background-color: dodgerblue;
+}
+
+#games_form {
+    display: flex;
+    flex-direction: row;
+    gap: 300px;
+
+.selection-order {
+    position: relative;
+    left: 82px;
+    font-size: 28px;
+    top: 4px;
+    font-family: "Poppins", serif;
+    font-weight: 800;
+}
+
+#gauntlet_sumbit {
+    align-self: end;
+    background-color: white;
+    border: dodgerblue 2px solid;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    color: dodgerblue;
+    border-radius: 25px;
+}
+
+.affichage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#game-list img {
+    max-width: 80px;
+    max-height: 80px;
+    margin: 0;
+}
+
+#game-list:empty {
+    display: none;
+}
+
+#game-list:not(:empty) {
+    display: initial;
+}}
+
+input, select {
+    color: black;
 }

@@ -3,33 +3,36 @@
 {% block title %}Create a gauntlet{% endblock %}
 
 {% block body %}
-    <h1>Choose games</h1>
     <div class="main_container">
         <form method="get" id="games_form">
-            <div class="games_container">
-            {% for game in games %}
-                <label class="game">
-                    <input name="game"
-                           type="checkbox"
-                           value="{{ game.id }}"
-                           class="checkbox"
-                           data-name="{{ game.base64Image }}"
-                           data-image="{% if game.base64Image is defined %}data:image/png;base64,{{ game.base64Image }}{% endif %}">
-                    {% if game.base64Image is defined %}
-                        <img src="data:image/png;base64,{{ game.base64Image }}" alt="{{ game.name }}">
-                        {{ game.name }}
-                    {% else %}
-                        <p>{{ game.name }}</p>
-                    {% endif %}
-                    <span class="selection-order"></span>
-                </label>
-            {% endfor %}
+            <div class="main_container_without_submit">
+                <h1 id="title_gauntlet">Choose games</h1>
+                <div class="games_container">
+                    {% for game in games %}
+                        <label class="game">
+                            <input name="game"
+                                   type="checkbox"
+                                   value="{{ game.id }}"
+                                   class="checkbox"
+                                   data-name="{{ game.base64Image }}"
+                                   data-image="{% if game.base64Image is defined %}data:image/png;base64,{{ game.base64Image }}{% endif %}">
+                            {% if game.base64Image is defined %}
+                                <img src="data:image/png;base64,{{ game.base64Image }}" alt="{{ game.name }}">
+                                <p>{{ game.name }}</p>
+                            {% else %}
+                                <p>{{ game.name }}</p>
+                            {% endif %}
+                            <span class="selection-order"></span>
+                        </label>
+                    {% endfor %}
+                </div>
+                <button type="submit" id="gauntlet_sumbit">Valider</button>
             </div>
-            <button type="submit">Valider</button>
-            <p id="result">0/{{ nbGames }}</p>
-            <div id="selected-games">
-                <h2>Selected Games:</h2>
-                <ul id="game-list"></ul>
+            <div class="affichage">
+                <p id="result">0/{{ nbGames }}</p>
+                <div id="selected-games">
+                    <ul id="game-list"></ul>
+                </div>
             </div>
             <script src="{{ asset('checkedCount.js') }}"></script>
             <script src="{{ asset('darkenCheckbox.js') }}"></script>
