@@ -4,13 +4,13 @@
 
 {% block body %}
     <div class="main_container">
-        <form method="get" id="games_form">
+        <form method="post" id="games_form" action="{{ path('app_gauntlet_panel') }}">
             <div class="main_container_without_submit">
                 <h1 id="title_gauntlet">Choose games</h1>
                 <div class="games_container">
                     {% for game in games %}
                         <label class="game">
-                            <input name="game"
+                            <input name="game[]"
                                    type="checkbox"
                                    value="{{ game.id }}"
                                    class="checkbox"

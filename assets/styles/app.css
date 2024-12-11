@@ -36,15 +36,12 @@ html, body{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    align-items: center;
 }
 
 .games_container img {
     max-width: 200px;
     height: 128px;
-}
-
-h1 {
-    text-align: center;
 }
 
 .game {
@@ -90,13 +87,15 @@ h1 {
 }
 
 #gauntlet_sumbit {
-    align-self: end;
     background-color: white;
     border: dodgerblue 2px solid;
     font-family: "Poppins", serif;
     font-weight: 600;
     color: dodgerblue;
     border-radius: 25px;
+    height: 50px;
+    width: 130px;
+    font-size: 1.2em;
 }
 
 .affichage {

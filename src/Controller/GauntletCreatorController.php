@@ -21,13 +21,16 @@ class GauntletCreatorController extends AbstractController
             }
         }
 
-        $reponsePost = $request->request->all();
-        $formulaire = $reponsePost['gauntlet_parameter'];
-        $nbGames = $formulaire['nbGames'];
-        $disposition = $formulaire['disposition'];
+        if (0 != $request->request->count()) {
+            $reponsePost = $request->request->all();
+            $formulaire = $reponsePost['gauntlet_parameter'];
+            $nbGames = $formulaire['nbGames'];
+            $disposition = $formulaire['disposition'];
 
-        return $this->render('gauntlet_creator/index.html.twig', [
-            'games' => $games, 'nbGames' => $nbGames, 'disposition' => $disposition,
-        ]);
+            return $this->render('gauntlet_creator/index.html.twig', [
+                'games' => $games, 'nbGames' => $nbGames, 'disposition' => $disposition,
+            ]);
+        }
+        return $this->redirectToRoute('app_home');
     }
 }
