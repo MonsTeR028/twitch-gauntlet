@@ -26,6 +26,9 @@
                         </label>
                     {% endfor %}
                 </div>
+                <div id="error-message" style="color: red; display: none;">
+                    Vous devez selectionner {{ nbGames }} jeux.
+                </div>
                 <button type="submit" id="gauntlet_sumbit">Valider</button>
             </div>
             <div class="affichage">
@@ -34,6 +37,7 @@
                     <ul id="game-list"></ul>
                 </div>
             </div>
+            <script src="{{ asset('minimumCheck.js') }}"></script>
             <script src="{{ asset('checkedCount.js') }}"></script>
             <script src="{{ asset('darkenCheckbox.js') }}"></script>
         </form>

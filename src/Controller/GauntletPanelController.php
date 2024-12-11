@@ -13,7 +13,7 @@ class GauntletPanelController extends AbstractController
     public function index(Request $request): Response
     {
         $gauntlet = $request->request->all();
-
+        // Faire en sorte que la requete Post ne soit pas envoyé dans l'ordre --> avec script placeholder gauntlet
         return $this->render('app_gauntlet_panel/index.html.twig', ['gaunlet' => $gauntlet]);
     }
 }
