@@ -78,3 +78,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialisation
     updateCheckedCount();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.checkbox');
+    const selectedGames = [];
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('click', function () {
+            const gameId = this.value;
+
+            // Si le jeu est déjà dans la liste, on le supprime pour réajouter à la fin
+            const index = selectedGames.indexOf(gameId);
+            if (index > -1) {
+                selectedGames.splice(index, 1);
+            }
+
+            // Ajouter le jeu à la fin de la liste
+            if (this.checked) {
+                selectedGames.push(gameId);
+            } else {
+                // Si décoché, on le supprime simplement
+                const idx = selectedGames.indexOf(gameId);
+                if (idx > -1) {
+                    selectedGames.splice(idx, 1);
+                }
+            }
+
+            // Mettre à jour l'ordre dans un champ caché
+            const orderInput = document.getElementById('selected-order');
+            orderInput.value = JSON.stringify(selectedGames);
+        });
+    });
+});

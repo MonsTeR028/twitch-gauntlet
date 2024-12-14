@@ -29,7 +29,8 @@
                 <div id="error-message" style="color: red; display: none;">
                     Vous devez selectionner {{ nbGames }} jeux.
                 </div>
-                <button type="submit" id="gauntlet_sumbit">Valider</button>
+                <input type="hidden" name="selected_order" id="selected-order" value="[]">
+                <button type="submit" id="gauntlet_submit">Valider</button>
             </div>
             <div class="affichage">
                 <p id="result">0/{{ nbGames }}</p>

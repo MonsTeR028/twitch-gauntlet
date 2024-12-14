@@ -27,7 +27,11 @@ class GauntletParameterType extends AbstractType
                     'Bas' => 'bottom',
                     'Gauche' => 'left',
                     'Droite' => 'right']])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
+            ->add('typeEcran', ChoiceType::class,
+                ['label' => 'Type de Gauntlet', 'choices' => [
+                    'Gauntlet sur une fenêtre' => 'oui',
+                    'Paramétres séparés du Gauntlet' => 'non',
+                ]])
         ;
     }
 

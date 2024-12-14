@@ -76,7 +76,7 @@ html, body{
     display: flex;
     flex-direction: row;
     gap: 300px;
-
+}
 .selection-order {
     position: relative;
     left: 82px;
@@ -86,7 +86,7 @@ html, body{
     font-weight: 800;
 }
 
-#gauntlet_sumbit {
+#gauntlet_submit {
     background-color: white;
     border: dodgerblue 2px solid;
     font-family: "Poppins", serif;
@@ -121,8 +121,22 @@ html, body{
 
 #game-list:not(:empty) {
     display: initial;
-}}
+}
 
 input, select {
+    color: black;
+}
+
+#gauntlet_creator {
+    background-color: white;
+    border: #2f66ff solid 3px;
+    align-self: center;
+    justify-self: center;
+    color: #2f66ff;
+    text-decoration: none;
+    padding: 20px 60px 20px 60px;
+}
+
+#gauntlet_parameter option {
     color: black;
 }
