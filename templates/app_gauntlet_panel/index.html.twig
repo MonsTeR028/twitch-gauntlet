@@ -1,9 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Votre Gauntlet{% endblock %}
 
 {% block body %}
-    {% for game in games %}
-        {{ game.name }}
-    {% endfor %}
+    <div id="gauntlet" class="{{ disposition }}">
+        {% for game in games %}
+            {% set compteur = (compteur|default(0) + 1) %}
+            <div class="gauntlet-container">
+                <div class="gauntlet-game">
+                    {% if game.base64Image is defined %}
+                        <img src="data:image/png;base64,{{ game.base64Image }}" alt="{{ game.name }}">
+                    {% else %}
+                        <p>{{ game.name }}</p>
+                    {% endif %}
+                </div>
+                {% if compteur == 1 %}
+                    <div class="gauntlet-triangle"></div>
+                {% else %}
+                    <div hidden class="gauntlet-triangle"></div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

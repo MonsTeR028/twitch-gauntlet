@@ -16,16 +16,22 @@ class GauntletPanelController extends AbstractController
         $gauntlet = $request->request->all();
         $selectedOrder = json_decode($gauntlet['selected_order'], true);
         $gamesPost = $gauntlet['game'];
+        $disposition = $gauntlet['disposition'];
         $gamesIndexes = array_intersect($selectedOrder, $gamesPost);
 
         $games = [];
         foreach ($gamesIndexes as $gameIndex) {
             $games[] = $gamesRepository->findBy(['id' => (int) $gameIndex])[0];
         }
-        dump($games);
+
+        foreach ($games as $game) {
+            if ($game->getImage()) {
+                $game->base64Image = base64_encode(stream_get_contents($game->getImage()));
+            }
+        }
 
         return $this->render('app_gauntlet_panel/index.html.twig', [
-            'gauntlet' => $gamesIndexes, 'games' => $games,
+            'games' => $games, 'disposition' => $disposition,
         ]);
     }
 }
