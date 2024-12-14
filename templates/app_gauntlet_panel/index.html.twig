@@ -3,23 +3,30 @@
 {% block title %}Votre Gauntlet{% endblock %}
 
 {% block body %}
-    <div id="gauntlet" class="{{ disposition }}">
-        {% for game in games %}
-            {% set compteur = (compteur|default(0) + 1) %}
-            <div class="gauntlet-container">
-                <div class="gauntlet-game">
-                    {% if game.base64Image is defined %}
-                        <img src="data:image/png;base64,{{ game.base64Image }}" alt="{{ game.name }}">
+    <div id="main" class="{{ disposition }}">
+        <div id="gauntlet" class="{{ disposition }}">
+            {% for game in games %}
+                {% set compteur = (compteur|default(0) + 1) %}
+                <div class="gauntlet-container">
+                    <div class="gauntlet-game">
+                        {% if game.base64Image is defined %}
+                            <img src="data:image/png;base64,{{ game.base64Image }}" alt="{{ game.name }}">
+                        {% else %}
+                            <p>{{ game.name }}</p>
+                        {% endif %}
+                    </div>
+                    {% if compteur == 1 %}
+                        <div class="gauntlet-triangle"></div>
                     {% else %}
-                        <p>{{ game.name }}</p>
+                        <div hidden class="gauntlet-triangle"></div>
                     {% endif %}
                 </div>
-                {% if compteur == 1 %}
-                    <div class="gauntlet-triangle"></div>
-                {% else %}
-                    <div hidden class="gauntlet-triangle"></div>
-                {% endif %}
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="gauntlet-panel">
+            <button id="previous">Précédent</button>
+            <button id="next">Suivant</button>
+            <button id="reset">Redémarrer</button>
+        </div>
     </div>
 {% endblock %}

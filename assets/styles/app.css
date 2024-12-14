@@ -15,6 +15,7 @@ html, body{
     font-family: "Poppins", serif;
     font-weight: 500;
 }
+
 .main_container {
     display: flex;
     flex-direction: column;
@@ -239,4 +240,96 @@ input, select {
     border-style: solid;
     border-width: 0 20px 32px 20px;
     border-color: transparent transparent #ffffff transparent;
+}
+
+#main {
+    display: flex;
+    flex: 1;
+}
+
+#main.top {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#main.bottom {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#main.left {
+    flex-direction: row;
+}
+
+#main.left #gauntlet, #main.right #gauntlet {
+    flex: 0;
+}
+
+#main.left .gauntlet-panel {
+    align-self: start;
+    margin-top: 12px;
+    justify-content: center;
+    margin-right: 100px;
+    flex: 1;
+}
+
+#main.right {
+    flex-direction: row-reverse;
+}
+
+#main.right .gauntlet-panel {
+    align-self: start;
+    margin-top: 12px;
+    justify-content: center;
+    margin-left: 100px;
+    flex: 1;
+}
+
+.gauntlet-panel {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#previous, #next {
+    background-color: white;
+    border: dodgerblue 2px solid;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    color: dodgerblue;
+    border-radius: 25px;
+    height: 40px;
+    width: 130px;
+    font-size: 1.2em;
+}
+
+#reset {
+    background-color: white;
+    border: #b92626 2px solid;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    color: #b92626;
+    border-radius: 25px;
+    height: 40px;
+    width: 130px;
+    font-size: 1.2em;
+}
+
+#home img {
+    height: 50px;
+    width: 50px;
+}
+
+#home:not(.show) {
+    position: fixed;
+    left: 0;
+}
+
+#home.show {
+    position: fixed;
+    align-self: end;
 }

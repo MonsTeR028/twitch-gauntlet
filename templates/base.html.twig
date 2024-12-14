@@ -11,6 +11,13 @@
         {% endblock %}
     </head>
     <body>
+        {% if app.current_route() == 'app_home' %}
+            <a hidden id="home" href="{{ path('app_home') }}"><img src="{{ asset('/img/home.png') }}" alt="home"></a>
+        {% elseif app.current_route() == 'app_gauntlet_panel' and disposition is defined and disposition == 'left' %}
+            <a class="show" id="home" href="{{ path('app_home') }}"><img src="{{ asset('/img/home.png') }}" alt="home"></a>
+        {% else %}
+            <a id="home" href="{{ path('app_home') }}"><img src="{{ asset('/img/home.png') }}" alt="home"></a>
+        {% endif %}
         {% block body %}{% endblock %}
     </body>
 </html>
