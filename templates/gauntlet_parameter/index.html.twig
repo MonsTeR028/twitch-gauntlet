@@ -3,9 +3,11 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<h1>Paramétrez votre Gauntlet</h1>
-    {{ form_start(formulaire) }}
-    {{ form_widget(formulaire) }}
-    <button type="submit" id="gauntlet_submit">Enregistrer</button>
-    {{ form_end(formulaire) }}
+    <div class="gauntlet-parameter-container">
+        <h1>Paramétrez votre Gauntlet</h1>
+        {{ form_start(formulaire) }}
+        {{ form_widget(formulaire) }}
+        <button type="submit" id="gauntlet_submit">Enregistrer</button>
+        {{ form_end(formulaire) }}
+    </div>
 {% endblock %}

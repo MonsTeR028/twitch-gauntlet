@@ -128,14 +128,23 @@ input, select {
     color: black;
 }
 
+
+
 #gauntlet_creator {
     background-color: white;
     border: #2f66ff solid 3px;
-    align-self: center;
-    justify-self: center;
     color: #2f66ff;
     text-decoration: none;
-    padding: 20px 60px 20px 60px;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body:has(#gauntlet_creator) {
+    justify-content: center;
+    align-items: center;
 }
 
 #gauntlet_parameter option {
@@ -332,4 +341,46 @@ input, select {
 #home.show {
     position: fixed;
     align-self: end;
+}
+
+.gauntlet-parameter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f90ff;
+    border-radius: 15px;
+    border: #1b54a4 solid 3px;
+    width: 500px;
+    margin-top: 60px;
+    padding: 15px;
+}
+
+form[name="gauntlet_parameter"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#gauntlet_parameter div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#gauntlet_parameter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+body:has(.gauntlet-parameter-container) {
+    align-items: center;
+}
+
+.dimmed {
+    background-color: #132f5b;
 }
