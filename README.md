@@ -19,6 +19,8 @@
 
 ## 🚀 Installation et Configuration
 
+> **Note** : Le projet étant toujours en phase de tests, celui-ci n'est pas encore disponible en ligne mais vous pouvez le télécharger chez vous çi-dessous.
+
 ### 📌 Prérequis
 
 Avant de procéder à l'installation, assurez-vous d'avoir :
